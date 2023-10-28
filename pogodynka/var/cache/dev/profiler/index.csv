@@ -139,3 +139,6 @@ e37c46,127.0.0.1,GET,http://localhost:60553/weather/PL,1698507394,,200
 751369,127.0.0.1,GET,http://localhost:60553/weather/PL,1698507470,,200
 7fa1d8,127.0.0.1,GET,http://localhost:60553/weather/PL,1698507470,,200
 f94c91,127.0.0.1,GET,http://localhost:60553/weather/Szczecin,1698507570,,200
+e67a82,127.0.0.1,GET,http://localhost:60676/,1698510084,,404
+f0591a,127.0.0.1,GET,http://localhost:60676/,1698510086,,404
+03a6e0,127.0.0.1,GET,http://localhost:60676/weather/Szczecin,1698510092,,200

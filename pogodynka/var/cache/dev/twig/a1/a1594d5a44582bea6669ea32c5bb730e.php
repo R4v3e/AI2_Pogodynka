@@ -62,12 +62,17 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
         // line 10
         $this->displayBlock('javascripts', $context, $blocks);
         // line 12
-        echo "    </head>
+        echo "        <style>
+        body {
+                background: url(\"https://placehold.co/100x100/FFFFFF/EFEFEF/png?text=49460\");
+            }
+        </style>
+    </head>
     <body>
         ";
-        // line 14
+        // line 19
         $this->displayBlock('body', $context, $blocks);
-        // line 15
+        // line 20
         echo "    </body>
 </html>
 ";
@@ -138,7 +143,7 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
 
     }
 
-    // line 14
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -163,7 +168,7 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 14,  132 => 11,  122 => 10,  112 => 8,  102 => 7,  83 => 5,  71 => 15,  69 => 14,  65 => 12,  63 => 10,  60 => 9,  58 => 7,  53 => 5,  47 => 1,);
+        return array (  147 => 19,  137 => 11,  127 => 10,  117 => 8,  107 => 7,  88 => 5,  76 => 20,  74 => 19,  65 => 12,  63 => 10,  60 => 9,  58 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -179,6 +184,11 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
 
         {% block javascripts %}
         {% endblock %}
+        <style>
+        body {
+                background: url(\"https://placehold.co/100x100/FFFFFF/EFEFEF/png?text=49460\");
+            }
+        </style>
     </head>
     <body>
         {% block body %}{% endblock %}
