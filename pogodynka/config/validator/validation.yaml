@@ -1,0 +1,21 @@
+App\Entity\Location:
+  properties:
+    city:
+      - NotBlank: ~
+      - Type: string
+      - Length:
+          max: 255
+    country:
+      - NotBlank: ~
+      - Length:
+          max: 255
+
+App\Entity\Measurement:
+  properties:
+    date:
+      - NotBlank: ~
+    celsius:
+      - NotBlank: ~
+      - Range:
+          min: -20
+          max: 50

@@ -27,4 +27,5 @@ class WeatherController extends AbstractController
             'measurements' => $measurements,
         ]);
     }
+    
 }

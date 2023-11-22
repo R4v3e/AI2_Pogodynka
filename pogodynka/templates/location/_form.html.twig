@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+
+{{ form_row(form.city, {'attr': {'class': 'form-control'}}) }}
+{{ form_row(form.country, {'attr': {'class': 'form-select'}}) }}
+{{ form_row(form.latitude, {'attr': {'class': 'form-control'}}) }}
+{{ form_row(form.longitude, {'attr': {'class': 'form-control'}}) }}
+
+<button type="submit" class="btn btn-primary">{{ button_label }}</button>
+
+{{ form_end(form) }}

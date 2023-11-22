@@ -21,6 +21,19 @@ class LocationRepository extends ServiceEntityRepository
         parent::__construct($registry, Location::class);
     }
 
+      /**
+     * @return string[] Returns an array of distinct city names
+     */
+    public function findAllCities(): array
+    {
+        $result = $this->createQueryBuilder('l')
+            ->select('DISTINCT l.city')
+            ->getQuery()
+            ->getResult();
+
+        return array_column($result, 'city');
+    }
+
     // public function getIdByName($city)
     // {
     //     $qb = $this->createQueryBuilder('m');
