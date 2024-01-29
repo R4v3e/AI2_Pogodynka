@@ -94,4 +94,12 @@ class Forecast
 
         return $this;
     }
+
+    public function getFahrenheit(): ?float
+    {
+        if ($this->temperature === null) {
+            return null;
+        }
+        return ((float)$this->temperature * 9 / 5) + 32;
+    }
 }

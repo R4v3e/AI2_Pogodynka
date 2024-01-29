@@ -1,0 +1,13 @@
+{
+    "city": "{{ city }}",
+    "country": "{{ country }}",
+    "forecasts": [
+        {% for forecast in forecasts %}
+        {
+            "date": "{{ forecast.timestamp|date('Y-m-d') }}",
+            "temperatureCelsius": "{{ forecast.temperature }}",
+            "temperatureFahrenheit": "{{ forecast.fahrenheit }}"
+        }{{ not loop.last ? ',' }}
+        {% endfor %}
+    ]
+}

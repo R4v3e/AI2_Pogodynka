@@ -25,11 +25,6 @@ class WeatherUtil
         return $measurements;
     }
 
-    public function getWeatherForLocationByID(string $id): array
-    {
-        $measurements = $this->measurementRepository->findByLocationID($id);
-        return $measurements;
-    }
     /**
      * @return Forecast[]
      */
