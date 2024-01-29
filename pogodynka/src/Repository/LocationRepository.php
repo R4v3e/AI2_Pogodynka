@@ -34,6 +34,21 @@ class LocationRepository extends ServiceEntityRepository
         return array_column($result, 'city');
     }
 
+    public function findById(string $id): ?string 
+    {
+        $result = $this->createQueryBuilder('l')
+        ->select('l.city') // Select only the city field from the location alias 'l'
+        ->where('l.id = :id') // Add a where clause to filter by the id
+        ->setParameter('id', $id) // Set the id parameter
+        ->getQuery()
+        ->getOneOrNullResult(); // Get one result or null if not found
+
+        // Since we expect at most one result, we don't need array_column.
+        // Instead, return the 'city' directly if a result is found.
+        return $result ? $result['city'] : null;
+    }
+
+
     // public function getIdByName($city)
     // {
     //     $qb = $this->createQueryBuilder('m');

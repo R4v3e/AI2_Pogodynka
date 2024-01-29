@@ -136,7 +136,7 @@ class __TwigTemplate_7ad990578f4abb3119017bf902f5f384 extends Template
                 <td>
                     ";
             // line 31
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ACCESS_FORECAST_SHOW")) {
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ACCESS_FORECAST_SHOW")) {
                 // line 32
                 echo "                    <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forecast_show", ["id" => twig_get_attribute($this->env, $this->source, $context["forecast"], "id", [], "any", false, false, false, 32)]), "html", null, true);
@@ -145,7 +145,7 @@ class __TwigTemplate_7ad990578f4abb3119017bf902f5f384 extends Template
             }
             // line 34
             echo "                    ";
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ACCESS_FORECAST_EDIT")) {
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ACCESS_FORECAST_EDIT")) {
                 // line 35
                 echo "                    <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forecast_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["forecast"], "id", [], "any", false, false, false, 35)]), "html", null, true);
@@ -173,7 +173,7 @@ class __TwigTemplate_7ad990578f4abb3119017bf902f5f384 extends Template
     </table>
     ";
         // line 46
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ACCESS_FORECAST_NEW")) {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ACCESS_FORECAST_NEW")) {
             // line 47
             echo "    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forecast_new");
@@ -235,10 +235,10 @@ class __TwigTemplate_7ad990578f4abb3119017bf902f5f384 extends Template
                 <td>{{ forecast.temperature }}</td>
                 <td>{{ forecast.cloudiness }}</td>
                 <td>
-                    {% if is_granted('ACCESS_FORECAST_SHOW') %}
+                    {% if is_granted('ROLE_ACCESS_FORECAST_SHOW') %}
                     <a href=\"{{ path('app_forecast_show', {'id': forecast.id}) }}\">show</a>
                     {% endif %}
-                    {% if is_granted('ACCESS_FORECAST_EDIT') %}
+                    {% if is_granted('ROLE_ACCESS_FORECAST_EDIT') %}
                     <a href=\"{{ path('app_forecast_edit', {'id': forecast.id}) }}\">edit</a>
                     {% endif %}
                 </td>
@@ -250,7 +250,7 @@ class __TwigTemplate_7ad990578f4abb3119017bf902f5f384 extends Template
         {% endfor %}
         </tbody>
     </table>
-    {% if is_granted('ACCESS_FORECAST_NEW') %}
+    {% if is_granted('ROLE_ACCESS_FORECAST_NEW') %}
     <a href=\"{{ path('app_forecast_new') }}\">Create new</a>
     {% endif %}
 {% endblock %}

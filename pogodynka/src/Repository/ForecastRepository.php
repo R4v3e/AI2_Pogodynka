@@ -32,6 +32,19 @@ class ForecastRepository extends ServiceEntityRepository
         $result = $query->getResult();
         return $result;
     }
+
+
+    public function findByLocationID(string $id)
+    {
+        $qb = $this->createQueryBuilder('m');
+        $qb->where('m.location = :location')
+            ->setParameter('location', $id)
+            ->andWhere('m.timestamp > :now')
+            ->setParameter('now', date('Y-m-d'));
+        $query = $qb->getQuery();
+        $result = $query->getResult();
+        return $result;
+    }
     
 //    /**
 //     * @return Forecast[] Returns an array of Forecast objects
